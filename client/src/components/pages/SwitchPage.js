@@ -15,7 +15,7 @@ import RealDetail from "./RealDetail";
 const SwitchPage = () => {
   const authContext = useContext(AuthContext);
   const contactContext = useContext(ContactContext);
-  const { getData, myGetData } = contactContext;
+  const { getData, myGetData, currentSelContact } = contactContext;
 
   const { _dynamic_link } = authContext;
 
@@ -26,7 +26,7 @@ const SwitchPage = () => {
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
       <Route exact path={`/${_dynamic_link}`} component={Test} />
-      <Route exact path={`/:id`} component={RealDetail} />
+      <Route exact path={`/${currentSelContact._id}`} component={RealDetail} />
       {/* <Route exact path={`/${_dynamic_link}/:id`} component={RealDetail} /> */}
       <Route component={NoMatch} />
     </Switch>
