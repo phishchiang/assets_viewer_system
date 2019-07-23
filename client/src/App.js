@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 // import Home from "./components/pages/Home";
 // import About from "./components/pages/About";
@@ -26,12 +26,11 @@ if (localStorage.token) {
 // const { _dynamic_link } = authContext;
 
 const App = () => {
-  const dynamic_link = "GGGGG";
   return (
     <AuthState>
       <ContactState>
         <AlertState>
-          <Router>
+          <BrowserRouter>
             <Fragment>
               <Navbar />
               <div className="container">
@@ -39,7 +38,7 @@ const App = () => {
                 <SwitchPage />
               </div>
             </Fragment>
-          </Router>
+          </BrowserRouter>
         </AlertState>
       </ContactState>
     </AuthState>

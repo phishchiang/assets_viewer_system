@@ -6,8 +6,8 @@ const RealDetail = props => {
   const contactContext = useContext(ContactContext);
   const authContext = useContext(AuthContext);
 
-  const { register, error, clearErrors, isAuthenticated } = authContext;
-  const { getData, myGetData, currentSelContact } = contactContext;
+  const { isAuthenticated } = authContext;
+  const { currentSelContact } = contactContext;
 
   useEffect(() => {
     // getData();

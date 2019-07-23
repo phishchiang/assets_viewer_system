@@ -1,15 +1,13 @@
 import React, { useContext, Fragment, useEffect } from "react";
 import ContactContext from "../../context/contact/contactContext";
 import AuthContext from "../../context/auth/authContext";
-import Contacts from "../contacts/Contacts";
-import DetailPage from "./DetailPage";
 
 const Test = props => {
   const contactContext = useContext(ContactContext);
   const authContext = useContext(AuthContext);
 
   const { getData, myGetData } = contactContext;
-  const { register, error, clearErrors, isAuthenticated } = authContext;
+  const { isAuthenticated } = authContext;
 
   useEffect(() => {
     getData();
