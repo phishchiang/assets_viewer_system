@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
-import AlertContext from "../../context/alert/alertContext";
-import AuthContext from "../../context/auth/authContext";
+import React, { useState, useContext, useEffect } from 'react';
+import AlertContext from '../../context/alert/alertContext';
+import AuthContext from '../../context/auth/authContext';
 
 const Login = props => {
   const alertContext = useContext(AlertContext);
@@ -18,18 +18,18 @@ const Login = props => {
   useEffect(() => {
     // Once login, we'll get redirected to home page
     if (isAuthenticated) {
-      props.history.push(`/${_dynamic_link}`);
+      props.history.push(`/`);
     }
-    if (error === "Invalid Credentials") {
-      setAlert(error, "danger");
+    if (error === 'Invalid Credentials') {
+      setAlert(error, 'danger');
       clearErrors();
     }
     // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    email: "",
-    password: ""
+    email: '',
+    password: ''
   });
 
   const { name, email, password } = user;
@@ -43,9 +43,9 @@ const Login = props => {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log("Login submit");
-    if (email === "" || password === "") {
-      setAlert("Please fill in all fields", "danger");
+    console.log('Login submit');
+    if (email === '' || password === '') {
+      setAlert('Please fill in all fields', 'danger');
     } else {
       login({
         email: email,
