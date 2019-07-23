@@ -25,9 +25,9 @@ const SwitchPage = () => {
       <Route exact path="/about" component={About} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
+      <Route exact path={`/${_dynamic_link}`} component={Test} />
       <Route exact path={`/:id`} component={RealDetail} />
-      {/* <Route exact path={`/${_dynamic_link}`} component={Test} />
-      <Route exact path={`/${_dynamic_link}/:id`} component={RealDetail} /> */}
+      {/* <Route exact path={`/${_dynamic_link}/:id`} component={RealDetail} /> */}
       <Route component={NoMatch} />
     </Switch>
   );

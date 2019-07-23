@@ -24,7 +24,7 @@ const ContactState = props => {
     current: null,
     filtered: null,
     error: null,
-    myGetData: null,
+    myGetData: [],
     currentSelContact: []
   };
 

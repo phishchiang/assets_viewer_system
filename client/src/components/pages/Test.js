@@ -12,7 +12,7 @@ const Test = props => {
   const { register, error, clearErrors, isAuthenticated } = authContext;
 
   useEffect(() => {
-    // getData();
+    getData();
     if (!isAuthenticated) {
       props.history.push("/");
     }
@@ -42,10 +42,11 @@ const Test = props => {
 
   // with data :
   const with_data = (
-    <div>
-      This is some data
-      {/* {myGetData[0].title} */}
-    </div>
+    <Fragment>
+      {myGetData.map(item => (
+        <h2 key={item.id}>{item.title}</h2>
+      ))}
+    </Fragment>
   );
 
   return (
@@ -54,9 +55,7 @@ const Test = props => {
         <h1>Dynamic Link</h1>
         <button onClick={onClick}>test</button>
       </div>
-      <ul>{myGetData == null ? no_data : <div>DATA</div>}</ul>
-      <DetailPage />
-      <Contacts />
+      <ul>{myGetData == null ? no_data : with_data}</ul>
     </Fragment>
   );
 };
