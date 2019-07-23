@@ -25,3 +25,4 @@ export const LOGOUT = "LOGOUT";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 export const GET_DATA = "GET_DATA";
+export const GET_CURRENT_SEL_CONTACTS = "GET_CURRENT_SEL_CONTACTS";

@@ -7,12 +7,18 @@ const Login = props => {
   const authContext = useContext(AuthContext);
 
   const { setAlert } = alertContext;
-  const { login, error, clearErrors, isAuthenticated } = authContext;
+  const {
+    login,
+    error,
+    clearErrors,
+    isAuthenticated,
+    _dynamic_link
+  } = authContext;
 
   useEffect(() => {
     // Once login, we'll get redirected to home page
     if (isAuthenticated) {
-      props.history.push("/");
+      props.history.push(`/${_dynamic_link}`);
     }
     if (error === "Invalid Credentials") {
       setAlert(error, "danger");

@@ -14,7 +14,8 @@ import {
   CLEAR_CONTACT,
   CLEAR_FILTER,
   CONTACT_ERROR,
-  GET_DATA
+  GET_DATA,
+  GET_CURRENT_SEL_CONTACTS
 } from "../types";
 
 const ContactState = props => {
@@ -23,10 +24,19 @@ const ContactState = props => {
     current: null,
     filtered: null,
     error: null,
-    myGetData: null
+    myGetData: null,
+    currentSelContact: []
   };
 
   const [state, dispatch] = useReducer(contactReducer, initialState);
+
+  // Get my current selected contact
+  const getCurrentContact = contact => {
+    dispatch({
+      type: GET_CURRENT_SEL_CONTACTS,
+      payload: contact
+    });
+  };
 
   // my GET DATA TEST
   const getData = async () => {
@@ -170,7 +180,9 @@ const ContactState = props => {
         getContacts,
         clearContact,
         myGetData: state.myGetData,
-        getData
+        getData,
+        currentSelContact: state.currentSelContact,
+        getCurrentContact
       }}
     >
       {props.children}

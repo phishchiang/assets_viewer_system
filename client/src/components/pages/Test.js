@@ -1,6 +1,7 @@
 import React, { useContext, Fragment, useEffect } from "react";
 import ContactContext from "../../context/contact/contactContext";
 import AuthContext from "../../context/auth/authContext";
+import Contacts from "../contacts/Contacts";
 import DetailPage from "./DetailPage";
 
 const Test = props => {
@@ -55,6 +56,7 @@ const Test = props => {
       </div>
       <ul>{myGetData == null ? no_data : <div>DATA</div>}</ul>
       <DetailPage />
+      <Contacts />
     </Fragment>
   );
 };

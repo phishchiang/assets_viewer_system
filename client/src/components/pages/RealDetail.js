@@ -7,21 +7,24 @@ const RealDetail = props => {
   const authContext = useContext(AuthContext);
 
   const { register, error, clearErrors, isAuthenticated } = authContext;
-  const { getData, myGetData } = contactContext;
+  const { getData, myGetData, currentSelContact } = contactContext;
 
   useEffect(() => {
     // getData();
     if (!isAuthenticated) {
       props.history.push("/");
     }
+    console.log(currentSelContact.name);
     // eslint-disable-next-line
   }, []);
 
   return (
     <h2>
-      Real RealDetail
-      <p>Page</p>
-      <h1>{props.match.params.id}</h1>
+      Contact Detail
+      <div>{`Name : ${currentSelContact.name}`}</div>
+      <div>{`Email : ${currentSelContact.email}`}</div>
+      <div>{`Phone : ${currentSelContact.phone}`}</div>
+      <div>{`Type : ${currentSelContact.type}`}</div>
     </h2>
   );
 };

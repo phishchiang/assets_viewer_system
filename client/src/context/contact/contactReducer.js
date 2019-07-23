@@ -9,11 +9,17 @@ import {
   CLEAR_FILTER,
   CONTACT_ERROR,
   CLEAR_CONTACT,
-  GET_DATA
+  GET_DATA,
+  GET_CURRENT_SEL_CONTACTS
 } from "../types";
 
 export default (state, action) => {
   switch (action.type) {
+    case GET_CURRENT_SEL_CONTACTS:
+      return {
+        ...state,
+        currentSelContact: action.payload
+      };
     case GET_DATA:
       return {
         ...state,

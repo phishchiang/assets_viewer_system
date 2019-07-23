@@ -1,18 +1,39 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import ContactContext from "../../context/contact/contactContext";
+import { Link } from "react-router-dom";
 
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
-  const { deleteContact, setCurrent, clearCurrent } = contactContext;
+  const {
+    deleteContact,
+    setCurrent,
+    clearCurrent,
+    getCurrentContact
+  } = contactContext;
 
   // fade id
   // const { id, name, email, phone, type } = contact;
   const { _id, name, email, phone, type } = contact;
+  /*
+  useEffect(() => {
+    // getData();
+    if (!isAuthenticated) {
+      props.history.push("/");
+    }
+    // eslint-disable-next-line
+  }, []);
+  */
 
   const onDelete = () => {
     deleteContact(_id);
     clearCurrent();
+  };
+
+  const onDetail = () => {
+    // deleteContact(_id);
+    getCurrentContact(contact);
+    console.log(_id);
   };
 
   return (
@@ -49,9 +70,16 @@ const ContactItem = ({ contact }) => {
         >
           Edit
         </button>
+
         <button className="btn btn-danger btn-sm" onClick={onDelete}>
           Delete
         </button>
+
+        <Link to={`/${_id}`}>
+          <button onClick={onDetail} contact={contact}>
+            detail page
+          </button>
+        </Link>
       </p>
     </div>
   );
