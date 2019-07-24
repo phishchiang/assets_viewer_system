@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
+import shop_bg from './Shop_bg.png';
 
 const Login = props => {
   const alertContext = useContext(AlertContext);
@@ -56,6 +57,12 @@ const Login = props => {
 
   return (
     <div className="form-container">
+      {/* <img
+        src={shop_bg}
+        style={{ width: '200px', margin: 'auto', display: 'block' }}
+        alt="bg"
+      /> */}
+      {/* <div className="bg_image" /> */}
       <h1>
         Accout <span className="text-primary">Login</span>
       </h1>
