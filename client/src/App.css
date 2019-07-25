@@ -352,7 +352,8 @@ button {
 }
 
 .form-group input {
-  margin: 0.2rem 0 ;
+  margin: 0.2rem 0;
+  
 }
 
 .password{
@@ -371,16 +372,10 @@ button {
 
 .register-login-buttom{
   float: right;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 
-
-.inside-container{
-  width: 343px;
-  margin: auto;
-  color: #9c9c9c;
-}
 
 
 .form-container {
@@ -388,16 +383,25 @@ button {
   margin: 2rem auto;
   margin-top: 6rem;
   overflow: hidden;
-  padding: 0 2rem;
-  width: 455px;
+  padding: 2 2rem;
+  width: 380px;
   background-color: #1b1b1b;
 }
+
+
+.inside-container{
+  width: 290px;
+  margin: auto;
+  color: #9c9c9c;
+}
+
 
 .form-container h1{
   text-align: center;
   margin-top: 1.75rem;
   color: #fff;
   font-size: 2.3rem;
+  /* padding: 1rem; */
 }
 
 .form-container h2,
@@ -478,9 +482,14 @@ table th {
 }
 
 /* Mobile Styles */
-@media (max-width: 700px) {
+@media (max-width: 500px) {
   .hide-sm {
     display: none;
+  }
+
+  .login-side{
+    margin-right: 0;
+    margin-top: 0.25rem;
   }
 
   .grid-2,

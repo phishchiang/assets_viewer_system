@@ -97,7 +97,7 @@ const Login = props => {
           />
         </form>
         <div className="register-login-buttom">
-          New to Soelle ?{' '}
+          New to here?{' '}
           <Link
             to="/register"
             style={{

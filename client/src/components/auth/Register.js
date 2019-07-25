@@ -22,13 +22,12 @@ const Register = props => {
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    name: '',
     email: '',
     password: '',
     password2: ''
   });
 
-  const { name, email, password, password2 } = user;
+  const { email, password, password2 } = user;
 
   const onChange = e => {
     setUser({
@@ -39,14 +38,13 @@ const Register = props => {
 
   const onSubmit = e => {
     e.preventDefault();
-    if (name === '' || email === '' || password === '') {
+    if (email === '' || password === '') {
       setAlert('Please enter all fields', 'danger');
     } else if (password !== password2) {
       setAlert('Passwords do not match', 'danger');
     } else {
       console.log('Register submit');
       register({
-        name: name,
         email: email,
         password: password
       });
@@ -126,7 +124,7 @@ const Register = props => {
           <div className="register-login-buttom">
             Have an accout?{' '}
             <Link
-              to="/register"
+              to="/login"
               style={{
                 color: 'white',
                 borderBottomStyle: 'solid',
