@@ -1,6 +1,7 @@
-import React, { useState, useContext, useEffect } from "react";
-import AlertContext from "../../context/alert/alertContext";
-import AuthContext from "../../context/auth/authContext";
+import React, { useState, useContext, useEffect } from 'react';
+import AlertContext from '../../context/alert/alertContext';
+import AuthContext from '../../context/auth/authContext';
+import { Link } from 'react-router-dom';
 
 const Register = props => {
   const alertContext = useContext(AlertContext);
@@ -11,20 +12,20 @@ const Register = props => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push("/");
+      props.history.push('/');
     }
-    if (error === "User already exists") {
-      setAlert(error, "danger");
+    if (error === 'User already exists') {
+      setAlert(error, 'danger');
       clearErrors();
     }
     // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    name: "",
-    email: "",
-    password: "",
-    password2: ""
+    name: '',
+    email: '',
+    password: '',
+    password2: ''
   });
 
   const { name, email, password, password2 } = user;
@@ -38,12 +39,12 @@ const Register = props => {
 
   const onSubmit = e => {
     e.preventDefault();
-    if (name === "" || email === "" || password === "") {
-      setAlert("Please enter all fields", "danger");
+    if (name === '' || email === '' || password === '') {
+      setAlert('Please enter all fields', 'danger');
     } else if (password !== password2) {
-      setAlert("Passwords do not match", "danger");
+      setAlert('Passwords do not match', 'danger');
     } else {
-      console.log("Register submit");
+      console.log('Register submit');
       register({
         name: name,
         email: email,
@@ -54,58 +55,89 @@ const Register = props => {
 
   return (
     <div className="form-container">
-      <h1>
-        Accout <span className="text-primary">Register</span>
-      </h1>
-      <form onSubmit={onSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
+      <div className="inside-container">
+        <h1>Register</h1>
+        <form onSubmit={onSubmit}>
+          <div className="form-group">
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={onChange}
+              required
+              placeholder="Email"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={onChange}
+              required
+              minLength="6"
+              placeholder="Password"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              name="password2"
+              value={password2}
+              onChange={onChange}
+              required
+              minLength="6"
+              placeholder="Confirm"
+            />
+          </div>
+          <div className="password-item">
+            <input type="checkbox" name="rememberMe" value="rememberMe" />
+            <span>
+              {' '}
+              I have read and agree to the{' '}
+              <Link
+                to="/register"
+                style={{
+                  color: 'white',
+                  borderBottomStyle: 'solid',
+                  borderBottomWidth: '1px'
+                }}
+              >
+                Terms of Service
+              </Link>{' '}
+              and{' '}
+              <Link
+                to="/register"
+                style={{
+                  color: 'white',
+                  borderBottomStyle: 'solid',
+                  borderBottomWidth: '1px'
+                }}
+              >
+                Privacy Policy.
+              </Link>
+            </span>
+          </div>
           <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={onChange}
-            required
+            type="submit"
+            value="Register"
+            className="btn btn-login btn-block"
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={onChange}
-            required
-            minLength="6"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password2">Confirm Password</label>
-          <input
-            type="password"
-            name="password2"
-            value={password2}
-            onChange={onChange}
-            required
-            minLength="6"
-          />
-        </div>
-        <input
-          type="submit"
-          value="Register"
-          className="btn btn-primary btn-block"
-        />
-      </form>
+          <div className="register-login-buttom">
+            Have an accout?{' '}
+            <Link
+              to="/register"
+              style={{
+                color: 'white',
+                borderBottomStyle: 'solid',
+                borderBottomWidth: '1px'
+              }}
+            >
+              Login
+            </Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

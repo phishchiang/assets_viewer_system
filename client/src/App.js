@@ -32,8 +32,8 @@ const App = () => {
         <AlertState>
           <BrowserRouter>
             <Fragment>
-              <Navbar />
               <div className="container">
+                <Navbar />
                 <Alerts />
                 <SwitchPage />
               </div>

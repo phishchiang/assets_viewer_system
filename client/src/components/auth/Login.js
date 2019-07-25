@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
+import { Link } from 'react-router-dom';
 import shop_bg from './Shop_bg.png';
 
 const Login = props => {
@@ -57,42 +58,58 @@ const Login = props => {
 
   return (
     <div className="form-container">
-      {/* <img
-        src={shop_bg}
-        style={{ width: '200px', margin: 'auto', display: 'block' }}
-        alt="bg"
-      /> */}
-      {/* <div className="bg_image" /> */}
-      <h1>
-        Accout <span className="text-primary">Login</span>
-      </h1>
-      <form onSubmit={onSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
+      <div className="inside-container">
+        <h1>Login</h1>
+        <form onSubmit={onSubmit}>
+          <div className="form-group">
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={onChange}
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={onChange}
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div className="password">
+            <div className="password-item">
+              <input type="checkbox" name="rememberMe" value="rememberMe" />
+              <span> Remember me</span>
+            </div>
+            <Link to="/login" className="password-item">
+              Forgot password?
+            </Link>
+          </div>
           <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={onChange}
-            required
+            type="submit"
+            value="Login"
+            className="btn btn-login btn-block"
           />
+        </form>
+        <div className="register-login-buttom">
+          New to Soelle ?{' '}
+          <Link
+            to="/register"
+            style={{
+              color: 'white',
+              borderBottomStyle: 'solid',
+              borderBottomWidth: '1px'
+            }}
+          >
+            Register
+          </Link>
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <input
-          type="submit"
-          value="Login"
-          className="btn btn-primary btn-block"
-        />
-      </form>
+      </div>
     </div>
   );
 };
