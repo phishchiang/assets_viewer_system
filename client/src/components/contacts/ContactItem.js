@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import ContactContext from '../../context/contact/contactContext';
+import SlidePage from './SlidePage';
 import { Link } from 'react-router-dom';
 
 const ContactItem = ({ contact }) => {
@@ -83,7 +84,9 @@ const ContactItem = ({ contact }) => {
           </Link>
         </p>
       </div>
-      <h1>TEST</h1>
+      <div className="card bg-light">
+        <h1>TEST</h1>
+      </div>
     </div>
   );
 };

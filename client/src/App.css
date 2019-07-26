@@ -177,6 +177,11 @@ img {
   margin: 3rem 0;
 }
 
+.wrap-slide{
+  height: 100vh;
+}
+
+
 .wrap-products{
   margin: 5rem;
 }
