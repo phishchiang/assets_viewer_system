@@ -122,8 +122,7 @@ const AuthState = props => {
         loadUser,
         login,
         logout,
-        clearErrors,
-        _dynamic_link: state._dynamic_link
+        clearErrors
       }}
     >
       {props.children}

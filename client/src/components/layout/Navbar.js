@@ -26,15 +26,14 @@ const Navbar = ({ title, icon }) => {
         <div className="title spaceing"> </div>
         <div className="title">
           <Link to="/">
-            <img src={logo01} />
+            <img src={logo01} className="brand-logo" />
           </Link>
         </div>
         <ul className="login-side">
           <li>Hello {user && user.name}</li>
           <li>
-            <a onClick={onLogout} href="#!">
-              {' '}
-              <span className="hide-sm">Logout</span>
+            <a onClick={onLogout} href="#!" style={{ color: '#db664a' }}>
+              <span>Logout</span>
             </a>
           </li>
         </ul>

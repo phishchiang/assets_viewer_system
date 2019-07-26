@@ -55,6 +55,10 @@ img {
   position: relative; */
 }
 
+.brand-logo{
+  width: 8rem;
+}
+
 /* Text Styles*/
 .title{
   /* position: absolute; */

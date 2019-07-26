@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import ContactContext from '../../context/contact/contactContext';
-import SlidePage from './SlidePage';
 import { Link } from 'react-router-dom';
 
 const ContactItem = ({ contact }) => {
