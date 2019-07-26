@@ -399,7 +399,7 @@ button {
   padding: 2 2rem;
   width: 100%;
   background-color: #1b1b1b;
-  background-image: url('./components/auth/Shop_bg.png');
+  background-image: url('./components/auth/Shop_bg.jpg');
   background-color: #cccccc;
   height: 100vh;
   background-position: center;
@@ -475,13 +475,13 @@ table th {
 }
 
 .bg_image{
-  background-image: url('./components/auth/Shop_bg.png');
+  /* background-image: url('./components/auth/Shop_bg.jpg');
   background-color: #cccccc;
   height: 500px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  position: relative; */
 }
 
 .navbar ul {

@@ -7,16 +7,12 @@ import Login from '../auth/Login';
 import Test from './Test';
 import PrivateRoute from '../routing/PrivateRoute';
 import NoMatch from './NoMatch';
-import AuthContext from '../../context/auth/authContext';
 import ContactContext from '../../context/contact/contactContext';
 import RealDetail from './RealDetail';
 
 const SwitchPage = () => {
-  const authContext = useContext(AuthContext);
   const contactContext = useContext(ContactContext);
   const { currentSelContact } = contactContext;
-
-  const { _dynamic_link } = authContext;
 
   return (
     <Switch>
@@ -24,13 +20,11 @@ const SwitchPage = () => {
       <Route exact path="/about" component={About} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
-      <PrivateRoute exact path={`/${_dynamic_link}`} component={Test} />
       <PrivateRoute
         exact
         path={`/${currentSelContact._id}`}
         component={RealDetail}
       />
-      {/* <Route exact path={`/${_dynamic_link}/:id`} component={RealDetail} /> */}
       <Route component={NoMatch} />
     </Switch>
   );

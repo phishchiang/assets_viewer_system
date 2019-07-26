@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext';
 import ContactContext from '../../context/contact/contactContext';
+import logo01 from './logo.png';
 
 const Navbar = ({ title, icon }) => {
   const authContext = useContext(AuthContext);
@@ -24,7 +25,9 @@ const Navbar = ({ title, icon }) => {
       <div className="navbar bg-primary auth">
         <div className="title spaceing"> </div>
         <div className="title">
-          <Link to="/">SOELLE</Link>
+          <Link to="/">
+            <img src={logo01} />
+          </Link>
         </div>
         <ul className="login-side">
           <li>Hello {user && user.name}</li>

@@ -17,13 +17,11 @@ import './App.css';
 // import Test from "./components/pages/Test";
 // import NoMatch from "./components/pages/NoMatch";
 import SwitchPage from './components/pages/SwitchPage';
-// import AuthContext from "./context/auth/authContext";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 // const authContext = useContext(AuthContext);
-// const { _dynamic_link } = authContext;
 
 const App = () => {
   return (
