@@ -58,56 +58,58 @@ const Login = props => {
 
   return (
     <div className="form-container">
-      <div className="inside-container">
-        <h1>Login</h1>
-        <form onSubmit={onSubmit}>
-          <div className="form-group">
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={onChange}
-              placeholder="Email"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={onChange}
-              placeholder="Password"
-              required
-            />
-          </div>
-          <div className="password">
-            <div className="password-item">
-              <input type="checkbox" name="rememberMe" value="rememberMe" />
-              <span> Remember me</span>
+      <div className="between-container">
+        <div className="inside-container">
+          <h1>Login</h1>
+          <form onSubmit={onSubmit}>
+            <div className="form-group">
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={onChange}
+                placeholder="Email"
+                required
+              />
             </div>
-            <Link to="/login" className="password-item">
-              Forgot password?
+            <div className="form-group">
+              <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={onChange}
+                placeholder="Password"
+                required
+              />
+            </div>
+            <div className="password">
+              <div className="password-item">
+                <input type="checkbox" name="rememberMe" value="rememberMe" />
+                <span> Remember me</span>
+              </div>
+              <Link to="/login" className="password-item">
+                Forgot password?
+              </Link>
+            </div>
+            <input
+              type="submit"
+              value="Login"
+              className="btn btn-login btn-block"
+            />
+          </form>
+          <div className="register-login-buttom">
+            New to here?{' '}
+            <Link
+              to="/register"
+              style={{
+                color: 'white',
+                borderBottomStyle: 'solid',
+                borderBottomWidth: '1px'
+              }}
+            >
+              Register
             </Link>
           </div>
-          <input
-            type="submit"
-            value="Login"
-            className="btn btn-login btn-block"
-          />
-        </form>
-        <div className="register-login-buttom">
-          New to here?{' '}
-          <Link
-            to="/register"
-            style={{
-              color: 'white',
-              borderBottomStyle: 'solid',
-              borderBottomWidth: '1px'
-            }}
-          >
-            Register
-          </Link>
         </div>
       </div>
     </div>

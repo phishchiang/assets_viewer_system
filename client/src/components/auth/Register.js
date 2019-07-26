@@ -53,88 +53,90 @@ const Register = props => {
 
   return (
     <div className="form-container">
-      <div className="inside-container">
-        <h1>Register</h1>
-        <form onSubmit={onSubmit}>
-          <div className="form-group">
+      <div className="between-container">
+        <div className="inside-container">
+          <h1>Register</h1>
+          <form onSubmit={onSubmit}>
+            <div className="form-group">
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={onChange}
+                required
+                placeholder="Email"
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={onChange}
+                required
+                minLength="6"
+                placeholder="Password"
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="password"
+                name="password2"
+                value={password2}
+                onChange={onChange}
+                required
+                minLength="6"
+                placeholder="Confirm"
+              />
+            </div>
+            <div className="password-item">
+              <input type="checkbox" name="rememberMe" value="rememberMe" />
+              <span>
+                {' '}
+                I have read and agree to the{' '}
+                <Link
+                  to="/register"
+                  style={{
+                    color: 'white',
+                    borderBottomStyle: 'solid',
+                    borderBottomWidth: '1px'
+                  }}
+                >
+                  Terms of Service
+                </Link>{' '}
+                and{' '}
+                <Link
+                  to="/register"
+                  style={{
+                    color: 'white',
+                    borderBottomStyle: 'solid',
+                    borderBottomWidth: '1px'
+                  }}
+                >
+                  Privacy Policy.
+                </Link>
+              </span>
+            </div>
             <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={onChange}
-              required
-              placeholder="Email"
+              type="submit"
+              value="Register"
+              className="btn btn-login btn-block"
             />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={onChange}
-              required
-              minLength="6"
-              placeholder="Password"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              name="password2"
-              value={password2}
-              onChange={onChange}
-              required
-              minLength="6"
-              placeholder="Confirm"
-            />
-          </div>
-          <div className="password-item">
-            <input type="checkbox" name="rememberMe" value="rememberMe" />
-            <span>
-              {' '}
-              I have read and agree to the{' '}
+            <div className="register-login-buttom">
+              Have an accout?{' '}
               <Link
-                to="/register"
+                to="/login"
                 style={{
                   color: 'white',
                   borderBottomStyle: 'solid',
                   borderBottomWidth: '1px'
                 }}
               >
-                Terms of Service
-              </Link>{' '}
-              and{' '}
-              <Link
-                to="/register"
-                style={{
-                  color: 'white',
-                  borderBottomStyle: 'solid',
-                  borderBottomWidth: '1px'
-                }}
-              >
-                Privacy Policy.
+                Login
               </Link>
-            </span>
-          </div>
-          <input
-            type="submit"
-            value="Register"
-            className="btn btn-login btn-block"
-          />
-          <div className="register-login-buttom">
-            Have an accout?{' '}
-            <Link
-              to="/login"
-              style={{
-                color: 'white',
-                borderBottomStyle: 'solid',
-                borderBottomWidth: '1px'
-              }}
-            >
-              Login
-            </Link>
-          </div>
-        </form>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
