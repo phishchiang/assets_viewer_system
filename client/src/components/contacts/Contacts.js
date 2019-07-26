@@ -21,27 +21,11 @@ const Contacts = () => {
   return (
     <Fragment>
       {contacts !== null && !loading ? (
-        <TransitionGroup>
-          {filtered !== null
-            ? filtered.map(contact => (
-                <CSSTransition
-                  key={contact._id}
-                  timeout={1000}
-                  classNames="item"
-                >
-                  <ContactItem contact={contact} />
-                </CSSTransition>
-              ))
-            : contacts.map(contact => (
-                <CSSTransition
-                  key={contact._id}
-                  timeout={1000}
-                  classNames="item"
-                >
-                  <ContactItem contact={contact} />
-                </CSSTransition>
-              ))}
-        </TransitionGroup>
+        <div>
+          {contacts.map(contact => (
+            <ContactItem key={contact._id} contact={contact} />
+          ))}
+        </div>
       ) : (
         <Spinner />
       )}
@@ -50,3 +34,23 @@ const Contacts = () => {
 };
 
 export default Contacts;
+
+/*
+// Previous HTML return()
+<Fragment>
+  {contacts !== null && !loading ? (
+    <div>
+      {filtered !== null
+        ? filtered.map(contact => (
+            <ContactItem key={contact._id} contact={contact} />
+          ))
+        : contacts.map(contact => (
+            <ContactItem key={contact._id} contact={contact} />
+          ))}
+    </div>
+  ) : (
+    <Spinner />
+  )}
+</Fragment>
+
+*/

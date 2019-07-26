@@ -21,39 +21,44 @@ const Navbar = ({ title, icon }) => {
 
   const authLinks = (
     <Fragment>
-      <li>
-        <Link to={`/${_dynamic_link}`}>Dynamic Page</Link>
-      </li>
-      <li>Hello {user && user.name}</li>
-      <li>
-        <a onClick={onLogout} href="#!">
-          {' '}
-          <span className="hide-sm">Logout</span>
-        </a>
-      </li>
+      <div className="navbar bg-primary auth">
+        <div className="title spaceing"> </div>
+        <div className="title">
+          <Link to="/">SOELLE</Link>
+        </div>
+        <ul className="login-side">
+          <li>Hello {user && user.name}</li>
+          <li>
+            <a onClick={onLogout} href="#!">
+              {' '}
+              <span className="hide-sm">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </Fragment>
   );
 
   const guestLinks = (
     <Fragment>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
-      <li>
-        <Link to="/register">Register</Link>
-      </li>
+      <div className="navbar bg-primary">
+        <div className="title spaceing"> </div>
+        <div className="title">
+          <Link to="/">SHOP</Link>
+        </div>
+        <ul className="login-side">
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
+        </ul>
+      </div>
     </Fragment>
   );
 
-  return (
-    <div className="navbar bg-primary">
-      <div className="title spaceing"> </div>
-      <div className="title">
-        <Link to="/">SHOP</Link>
-      </div>
-      <ul className="login-side">{isAuthenticated ? authLinks : guestLinks}</ul>
-    </div>
-  );
+  return <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>;
 };
 
 Navbar.propTypes = {
@@ -62,8 +67,7 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  title: 'Contact Keeper',
-  icon: 'fas fa-id-card-alt'
+  title: 'Contact Keeper'
 };
 
 export default Navbar;

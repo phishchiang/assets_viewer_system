@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import PropTypes from "prop-types";
-import ContactContext from "../../context/contact/contactContext";
-import { Link } from "react-router-dom";
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import ContactContext from '../../context/contact/contactContext';
+import { Link } from 'react-router-dom';
 
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
@@ -37,50 +37,53 @@ const ContactItem = ({ contact }) => {
   };
 
   return (
-    <div className="card bg-light">
-      <h3 className="text-primary text-left">
-        {name}
-        {""}{" "}
-        <span
-          style={{ float: "right" }}
-          className={
-            "badge " +
-            (type === "professional" ? "badge-success" : "badge-primary")
-          }
-        >
-          {type.charAt(0).toUpperCase() + type.slice(1)}
-        </span>
-      </h3>
-      <ul className="list">
-        {email && (
-          <li>
-            <i className="fas fa-envelope-open" /> {email}
-          </li>
-        )}
-        {phone && (
-          <li>
-            <i className="fas fa-phone-open" /> {phone}
-          </li>
-        )}
-      </ul>
-      <p>
-        <button
-          className="btn btn-dark btn-sm"
-          onClick={() => setCurrent(contact)}
-        >
-          Edit
-        </button>
-
-        <button className="btn btn-danger btn-sm" onClick={onDelete}>
-          Delete
-        </button>
-
-        <Link to={`/${_id}`}>
-          <button onClick={onDetail} contact={contact}>
-            detail page
+    <div className="grid-2">
+      <div className="card bg-light">
+        <h3 className="text-primary text-left">
+          {name}
+          {''}{' '}
+          <span
+            style={{ float: 'right' }}
+            className={
+              'badge ' +
+              (type === 'professional' ? 'badge-success' : 'badge-primary')
+            }
+          >
+            {type.charAt(0).toUpperCase() + type.slice(1)}
+          </span>
+        </h3>
+        <ul className="list">
+          {email && (
+            <li>
+              <i className="fas fa-envelope-open" /> {email}
+            </li>
+          )}
+          {phone && (
+            <li>
+              <i className="fas fa-phone-open" /> {phone}
+            </li>
+          )}
+        </ul>
+        <p>
+          <button
+            className="btn btn-dark btn-sm"
+            onClick={() => setCurrent(contact)}
+          >
+            Edit
           </button>
-        </Link>
-      </p>
+
+          <button className="btn btn-danger btn-sm" onClick={onDelete}>
+            Delete
+          </button>
+
+          <Link to={`/${_id}`}>
+            <button onClick={onDetail} contact={contact}>
+              detail page
+            </button>
+          </Link>
+        </p>
+      </div>
+      <h1>TEST</h1>
     </div>
   );
 };
