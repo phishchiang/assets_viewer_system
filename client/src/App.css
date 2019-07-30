@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto','Noto Sans SC', 'Microsoft JhengHei', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -521,6 +521,19 @@ table th {
   opacity: 0;
   transition: opacity 1000ms ease-in;
 }
+
+  /* Products */
+  .product-layout{
+    font-size: 2rem;
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    color: #db6c4a;
+    flex-direction: column;
+    
+  }
+
 
 /* Mobile Styles */
 @media (max-width: 500px) {

@@ -19,13 +19,12 @@ const Home = () => {
       {/* <div className="wrap-slide">
       </div> */}
       <SlidePage />
-      <Products />
       <div className="wrap-products">
+        <Products />
         <div className="grid-1">
           <div>
             {/* <ContactFilter /> */}
-
-            <Contacts />
+            {/* <Contacts /> */}
           </div>
         </div>
       </div>
