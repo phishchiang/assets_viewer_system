@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
-import png01 from './product_imgs/product_pic_srg.png';
-import png02 from './product_imgs/product_pic_srs.png';
-import png03 from './product_imgs/product_pic_rwc.png';
-import png04 from './product_imgs/product_pic_ydc.png';
-import png05 from './product_imgs/product_pic_uvdw.png';
-import png06 from './product_imgs/product_pic_ywc.png';
+import png01 from './product_imgs/product_pic_srg.jpg';
+import png02 from './product_imgs/product_pic_srs.jpg';
+import png03 from './product_imgs/product_pic_rwc.jpg';
+import png04 from './product_imgs/product_pic_ydc.jpg';
+import png05 from './product_imgs/product_pic_uvdw.jpg';
+import png06 from './product_imgs/product_pic_ywc.jpg';
 
 const Products = () => {
   const GGG = [
@@ -55,7 +55,10 @@ const Products = () => {
               <div className="product-layout">
                 <img src={item.src} alt="" />
               </div>,
-              <div className="product-layout">{item.name}</div>
+              <div className="product-layout">
+                <div>{item.name}</div>
+                <div>{item.c_name}</div>
+              </div>
             ];
           } else {
             return [
