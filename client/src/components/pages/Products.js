@@ -46,35 +46,64 @@ const Products = () => {
     }
   ];
 
-  return (
-    <Fragment>
-      <div className="grid-2">
-        {GGG.map(item => {
-          if (item.id % 2 == 1) {
-            return [
-              <div className="product-layout">
-                <img src={item.src} alt="" />
-              </div>,
-              <div className="product-layout">
-                <div>{item.name}</div>
-                <div>{item.c_name}</div>
-              </div>
-            ];
-          } else {
-            return [
-              <div className="product-layout">
-                <div>{item.name}</div>
-                <div>{item.c_name}</div>
-              </div>,
-              <div className="product-layout">
-                <img src={item.src} alt="" />
-              </div>
-            ];
-          }
-        })}
-      </div>
-    </Fragment>
+  let products_layout;
+  const normalLayout = (
+    <div className="grid-2">
+      {GGG.map(item => {
+        if (item.id % 2 == 1) {
+          return [
+            <div className="product-layout">
+              <img src={item.src} alt="" />
+            </div>,
+            <div className="product-layout">
+              <div>{item.name}</div>
+              <div>{item.c_name}</div>
+            </div>
+          ];
+        } else {
+          return [
+            <div className="product-layout">
+              <div>{item.name}</div>
+              <div>{item.c_name}</div>
+            </div>,
+            <div className="product-layout">
+              <img src={item.src} alt="" />
+            </div>
+          ];
+        }
+      })}
+    </div>
   );
+
+  const smallLayout = (
+    <div className="grid-2">
+      {GGG.map(item => {
+        return [
+          <div className="product-layout">
+            <img src={item.src} alt="" />
+          </div>,
+          <div className="product-layout">
+            <div>{item.name}</div>
+            <div>{item.c_name}</div>
+          </div>
+        ];
+      })}
+    </div>
+  );
+
+  const myFunction = x => {
+    if (x.matches) {
+      products_layout = smallLayout;
+    } else {
+      products_layout = normalLayout;
+    }
+  };
+
+  const x = window.matchMedia('(max-width: 500px)');
+  myFunction(x);
+  x.addListener(myFunction);
+
+  return <Fragment>{products_layout}</Fragment>;
 };
 
 export default Products;
