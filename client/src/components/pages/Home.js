@@ -4,6 +4,7 @@ import ContactForm from '../contacts/ContactForm';
 import ContactFilter from '../contacts/ContactFilter';
 import AuthContext from '../../context/auth/authContext';
 import SlidePage from '../contacts/SlidePage';
+import Products from './Products';
 
 const Home = () => {
   const authContext = useContext(AuthContext);
@@ -18,6 +19,7 @@ const Home = () => {
       {/* <div className="wrap-slide">
       </div> */}
       <SlidePage />
+      <Products />
       <div className="wrap-products">
         <div className="grid-1">
           <div>
