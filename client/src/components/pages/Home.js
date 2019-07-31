@@ -5,6 +5,7 @@ import ContactFilter from '../contacts/ContactFilter';
 import AuthContext from '../../context/auth/authContext';
 import SlidePage from '../contacts/SlidePage';
 import Products from './Products';
+import Uploadimage from './UploadImage';
 
 const Home = () => {
   const authContext = useContext(AuthContext);
@@ -16,6 +17,9 @@ const Home = () => {
 
   return (
     <Fragment>
+      <Uploadimage />
+      <ContactForm />
+      <Contacts />
       {/* <div className="wrap-slide">
       </div> */}
       <SlidePage />
