@@ -1,6 +1,6 @@
-import React, { useContext, Fragment } from "react";
-import { Link } from "react-router-dom";
-import ContactContext from "../../context/contact/contactContext";
+import React, { useContext, Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import ContactContext from '../../context/contact/contactContext';
 
 const DetailPage = props => {
   const contactContext = useContext(ContactContext);

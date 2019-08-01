@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, Fragment } from 'react';
 import ContactContext from '../../context/contact/contactContext';
 import jpg02 from '../pages/product_imgs/Home_pic02.jpg';
 
@@ -6,6 +6,8 @@ const LoadPage = () => {
   const contactContext = useContext(ContactContext);
 
   const { getData, myGetData } = contactContext;
+
+  const [data, setData] = useState('');
 
   useEffect(() => {
     getData();
@@ -31,20 +33,22 @@ const LoadPage = () => {
     return window.btoa(binary);
   };
 
-  const [img, setImg] = useState({
-    contentType: '',
-    data: '',
-    type: ''
-  });
-
   return (
-    <div>
-      <img
-        src={myGetData.flag + arrayBufferToBase64(myGetData.data)}
-        alt="Helpful alt text"
-      />
-      {/* <img src={jpg02} alt="" /> */}
-    </div>
+    <Fragment>
+      <div>
+        {myGetData.map(item => {
+          return (
+            <img
+              src={
+                'data:image/png;base64,' +
+                arrayBufferToBase64(item.img.data.data)
+              }
+            />
+            // <span>{arrayBufferToBase64(item.img.data.data)}</span>
+          );
+        })}
+      </div>
+    </Fragment>
   );
 };
 
