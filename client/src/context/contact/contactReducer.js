@@ -26,7 +26,7 @@ export default (state, action) => {
         myGetData: {
           contentType: action.payload.img.contentType,
           data: action.payload.img.data.data,
-          flag: 'data:image/png;base64,'
+          flag: `data:${action.payload.img.contentType};base64,`
         }
       };
     case GET_CONTACTS:

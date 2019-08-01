@@ -52,21 +52,21 @@ const Products = () => {
       {GGG.map(item => {
         if (item.id % 2 == 1) {
           return [
-            <div className="product-layout">
+            <div className="product-layout" key={`${item.id}01`}>
               <img src={item.src} alt="" />
             </div>,
-            <div className="product-layout">
+            <div className="product-layout" key={`${item.id}02`}>
               <div>{item.name}</div>
               <div>{item.c_name}</div>
             </div>
           ];
         } else {
           return [
-            <div className="product-layout">
+            <div className="product-layout" key={`${item.id}03`}>
               <div>{item.name}</div>
               <div>{item.c_name}</div>
             </div>,
-            <div className="product-layout">
+            <div className="product-layout" key={`${item.id}04`}>
               <img src={item.src} alt="" />
             </div>
           ];

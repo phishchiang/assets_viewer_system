@@ -3,7 +3,7 @@ import React from 'react';
 const UploadImage = () => {
   return (
     <div>
-      <form action="/upload" method="POST" enctype="multipart/form-data">
+      <form action="/upload" method="POST" encType="multipart/form-data">
         <div className="file-field input-field">
           <div className="btn grey">
             <span>File</span>

@@ -76,7 +76,7 @@ app
     });
   })
   .get('/upload', function(req, res) {
-    Item.findOne({}, 'img createdAt', function(err, img) {
+    Item.find({}, 'img createdAt', function(err, img) {
       if (err) res.send(err);
       // console.log(img);
       res.contentType('json');
