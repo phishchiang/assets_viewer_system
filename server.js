@@ -68,7 +68,7 @@ app
           let newItem = new Item();
           newItem.img.data = fs.readFileSync(req.file.path);
           newItem.img.filename = req.file.filename;
-          newItem.img.contentType = 'image/png';
+          newItem.img.contentType = req.file.mimetype;
           newItem.save();
           res.send('uploaded!!');
         }
