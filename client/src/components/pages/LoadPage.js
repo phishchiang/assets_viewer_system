@@ -38,13 +38,15 @@ const LoadPage = () => {
       <div>
         {myGetData.map(item => {
           return (
-            <img
-              src={
-                'data:image/png;base64,' +
-                arrayBufferToBase64(item.img.data.data)
-              }
-            />
-            // <span>{arrayBufferToBase64(item.img.data.data)}</span>
+            <div>
+              <img
+                src={
+                  'data:image/png;base64,' +
+                  arrayBufferToBase64(item.img.data.data)
+                }
+              />
+              <span>{item.img.contentType}</span>
+            </div>
           );
         })}
       </div>
