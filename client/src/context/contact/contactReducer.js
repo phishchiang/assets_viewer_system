@@ -11,7 +11,7 @@ import {
   CLEAR_CONTACT,
   GET_DATA,
   GET_CURRENT_SEL_CONTACTS
-} from "../types";
+} from '../types';
 
 export default (state, action) => {
   switch (action.type) {
@@ -23,7 +23,11 @@ export default (state, action) => {
     case GET_DATA:
       return {
         ...state,
-        myGetData: action.payload
+        myGetData: {
+          contentType: action.payload.img.contentType,
+          data: action.payload.img.data.data,
+          flag: 'data:image/png;base64,'
+        }
       };
     case GET_CONTACTS:
       return {
@@ -75,7 +79,7 @@ export default (state, action) => {
       return {
         ...state,
         filtered: state.contacts.filter(contact => {
-          const regex = new RegExp(`${action.payload}`, "gi");
+          const regex = new RegExp(`${action.payload}`, 'gi');
           return contact.name.match(regex) || contact.email.match(regex);
         })
       };

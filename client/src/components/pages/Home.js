@@ -1,11 +1,12 @@
-import React, { Fragment, useContext, useEffect } from "react";
-import Contacts from "../contacts/Contacts";
-import ContactForm from "../contacts/ContactForm";
-import ContactFilter from "../contacts/ContactFilter";
-import AuthContext from "../../context/auth/authContext";
-import SlidePage from "../contacts/SlidePage";
-import Products from "./Products";
-import Uploadimage from "./UploadImage";
+import React, { Fragment, useContext, useEffect } from 'react';
+import Contacts from '../contacts/Contacts';
+import ContactForm from '../contacts/ContactForm';
+import ContactFilter from '../contacts/ContactFilter';
+import AuthContext from '../../context/auth/authContext';
+import SlidePage from '../contacts/SlidePage';
+import Products from './Products';
+import Uploadimage from './UploadImage';
+import LoadPage from './LoadPage';
 
 const Home = () => {
   const authContext = useContext(AuthContext);
@@ -17,6 +18,7 @@ const Home = () => {
 
   return (
     <Fragment>
+      <LoadPage />
       <Uploadimage />
       {/* <div className="wrap-slide">
       </div> */}

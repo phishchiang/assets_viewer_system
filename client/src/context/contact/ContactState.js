@@ -1,7 +1,7 @@
-import React, { useReducer } from "react";
-import axios from "axios";
-import ContactContext from "./contactContext";
-import contactReducer from "./contactReducer";
+import React, { useReducer } from 'react';
+import axios from 'axios';
+import ContactContext from './contactContext';
+import contactReducer from './contactReducer';
 import {
   GET_CONTACTS,
   ADD_CONTACT,
@@ -15,7 +15,7 @@ import {
   CONTACT_ERROR,
   GET_DATA,
   GET_CURRENT_SEL_CONTACTS
-} from "../types";
+} from '../types';
 
 const ContactState = props => {
   const initialState = {
@@ -39,7 +39,7 @@ const ContactState = props => {
 
   // my GET DATA TEST
   const getData = async () => {
-    const back = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const back = await fetch('/upload');
     const back_json = await back.json();
     console.log(back_json);
 
@@ -52,7 +52,7 @@ const ContactState = props => {
   // Get Contacts
   const getContacts = async () => {
     try {
-      const res = await axios.get("api/contacts");
+      const res = await axios.get('api/contacts');
 
       dispatch({
         type: GET_CONTACTS,
@@ -72,12 +72,12 @@ const ContactState = props => {
     // contact.id = uuid.v4();
     const config = {
       headers: {
-        "Content-type": "application/json"
+        'Content-type': 'application/json'
       }
     };
 
     try {
-      const res = await axios.post("api/contacts", contact, config);
+      const res = await axios.post('api/contacts', contact, config);
 
       dispatch({
         type: ADD_CONTACT,
@@ -114,7 +114,7 @@ const ContactState = props => {
   const updateContact = async contact => {
     const config = {
       headers: {
-        "Content-type": "application/json"
+        'Content-type': 'application/json'
       }
     };
 
