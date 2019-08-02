@@ -18,11 +18,11 @@ const Home = () => {
 
   return (
     <Fragment>
-      <LoadPage />
-      <Uploadimage />
+      {/* <LoadPage /> */}
+      {/* <Uploadimage /> */}
       {/* <div className="wrap-slide">
       </div> */}
-      {/* <SlidePage /> */}
+      <SlidePage />
       <div className="wrap-products">
         <Products />
         <div className="grid-1">
