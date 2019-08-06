@@ -522,18 +522,23 @@ table th {
   transition: opacity 1000ms ease-in;
 }
 
-  /* Products */
-  .product-layout{
-    font-size: 2rem;
-    display: flex;
-    height: 500px;
-    justify-content: center;
-    align-items: center;
-    color: #db6c4a;
-    flex-direction: column;
-    cursor: pointer;
-    
-  }
+/* Products */
+.product-layout{
+  font-size: 2rem;
+  display: flex;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  color: #db6c4a;
+  flex-direction: column;
+  cursor: pointer;
+  align-self: center;
+}
+
+.product-layout > img{
+  object-fit: cover;
+}
+
 
 
 /* Mobile Styles */
